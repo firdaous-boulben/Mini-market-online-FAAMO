@@ -1,0 +1,10 @@
+<?php
+    require("../controllers/model/model.php");
+    $idc=$_GET["id"];
+    $idp=$_GET["idp"];
+    $Login=$_GET["Login"];
+    supprimer_panier($idc,$idp);
+    $req=afficher_panier($idc);
+    if($req->fetch()){
+        require("cart.php");
+    }
